@@ -1,0 +1,13 @@
+version: '3'
+services:
+  postgres:
+    image: postgres
+    environment: 
+       POSTGRES_DB: sample
+       POSTGRES_USER: admin
+       POSTGRES_PASSWORD: admin
+  web:
+    build: .
+    image: postgresql-golang
+    ports:
+     - "8000:8000"
